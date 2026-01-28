@@ -136,27 +136,6 @@ export default function AdminPage() {
           ))}
         </div>
       </Section>
-      <Section title="✅ Approved Stories">
-  <div className="grid md:grid-cols-2 gap-6">
-    {approvedStories.map(s => (
-      <Card key={s._id} item={s}>
-        <button
-          onClick={() => toggleFeature("stories", s._id, true)}
-          className="btn bg-yellow-500 text-white"
-        >
-          ⭐ Feature
-        </button>
-        <button
-          onClick={() => remove("stories", s._id)}
-          className="btn bg-red-500 text-white"
-        >
-          Delete
-        </button>
-      </Card>
-    ))}
-  </div>
-</Section>
-
 
       <Section title="⭐ Featured Poems">
         <div className="grid md:grid-cols-2 gap-6">

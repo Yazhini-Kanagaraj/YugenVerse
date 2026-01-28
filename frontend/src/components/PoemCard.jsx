@@ -6,12 +6,7 @@ export default function PoemCard({ poem }) {
   return (
     <article className="card p-5 group transition-all duration-300 hover:shadow-lg">
       <div className="flex items-center justify-between">
-        <div>
         <h3 className="text-lg font-semibold">{poem.title}</h3>
-         <p className="text-sm text-gray-500 mt-1">
-            — {poem.author?.username || poem.author || "Anonymous"}
-            </p>
-            </div>
         <span className="text-xs px-2 py-1 rounded-full bg-turquoise-100 text-turquoise-800">
           {poem.language || "English"}
         </span>
