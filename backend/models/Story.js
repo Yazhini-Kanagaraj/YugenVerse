@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const storySchema = new mongoose.Schema({
+  title: String,
   content: String,
   mood: String,
 

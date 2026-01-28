@@ -12,7 +12,7 @@ export default function StoryCard({ story }) {
       whileHover={{ scale: 1.02 }}
       className="card p-5 hover:shadow-xl"
     >
-      <h3 className="text-lg font-semibold">{story.title}</h3>
+      <h3 className="text-lg font-semibold">{story.title || story.mood || "Untitled Story"}</h3>
       {/* Author */}
       <p className="text-sm italic text-gray-500 mt-1">
         — {story.anonymous ? "Anonymous" : story?.author || "Unknown"}
