@@ -18,12 +18,12 @@ export default function Home() {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
 useEffect(() => {
-  fetch(`${API}/api/poems/featured`)
+  fetch(`${API}/poems/featured`)
     .then(res => res.json())
     .then(data => setPoems(data))
     .catch(err => console.error("Poems fetch error:", err));
 
-  fetch(`${API}/api/stories/featured`)
+  fetch(`${API}/stories/featured`)
     .then(res => res.json())
     .then(data => setStories(data))
     .catch(err => console.error("Stories fetch error:", err));
