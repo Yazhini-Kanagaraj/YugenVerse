@@ -162,8 +162,8 @@ useEffect(() => {
   items={stories}
   renderItem={(s) => (
     <article className="card p-6 h-full hover:shadow-md">
-      <p className="text-sm text-gray-500 mb-2">{s.mood}</p>
-      <p className="text-gray-700 line-clamp-3 whitespace-pre-line">
+     <h3 className="font-semibold text-lg">{s.mood}</h3>
+     <p className="mt-3 whitespace-pre-line text-gray-700 line-clamp-3">
         {s.content}
       </p>
     </article>

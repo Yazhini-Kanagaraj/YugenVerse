@@ -36,8 +36,8 @@ export default function Poetry() {
       try {
         const url =
           activeCategory === "All"
-            ? `${API}/api/poems`
-            : `${API}/api/poems/category/${activeCategory}`;
+            ? `${API}/poems`
+            : `${API}/poems/category/${activeCategory}`;
         const res = await fetch(url);
         if (!res.ok) throw new Error("Failed to fetch poems");
         const data = await res.json();

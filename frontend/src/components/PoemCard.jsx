@@ -13,7 +13,7 @@ export default function PoemCard({ poem }) {
       </div>
     {/* Author */}
       <p className="text-sm italic text-gray-500 mt-1">
-        — {poem.anonymous ? "Anonymous" : poem.author}
+       — {poem?.anonymous ? "Anonymous" : poem?.author || "Unknown"}
       </p>
       <p
         className={`mt-3 font-poem leading-relaxed text-slate-700 group-hover:text-slate-900 transition-colors whitespace-pre-line

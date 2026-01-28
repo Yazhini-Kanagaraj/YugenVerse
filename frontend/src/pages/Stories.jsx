@@ -34,8 +34,8 @@ export default function Stories() {
       try {
         const url =
           activeCategory === "All"
-            ? `${API}/api/stories`
-            : `${API}/api/stories/mood/${activeCategory}`;
+            ? `${API}/stories`
+            : `${API}/stories/mood/${activeCategory}`;
         const res = await fetch(url);
         if (!res.ok) throw new Error("Failed to fetch stories");
         const data = await res.json();

@@ -15,7 +15,7 @@ export default function StoryCard({ story }) {
       <h3 className="text-lg font-semibold">{story.title}</h3>
       {/* Author */}
       <p className="text-sm italic text-gray-500 mt-1">
-        — {story.anonymous ? "Anonymous" : story.author}
+        — {story.anonymous ? "Anonymous" : story?.author || "Unknown"}
       </p>
       <motion.p
         className={`mt-3 text-slate-700 leading-relaxed whitespace-pre-line
