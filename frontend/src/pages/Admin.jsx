@@ -21,12 +21,12 @@ export default function AdminPage() {
         pp, ap, fp,
         ps, as, fs
       ] = await Promise.all([
-        fetch(`${API}/api/poems/pending`, { headers }),
-        fetch(`${API}/api/poems`, { headers }),
-        fetch(`${API}/api/poems/featured`, { headers }),
-        fetch(`${API}/api/stories/pending`, { headers }),
-        fetch(`${API}/api/stories`, { headers }),
-        fetch(`${API}/api/stories/featured`, { headers }),
+        fetch(`${API}/poems/pending`, { headers }),
+        fetch(`${API}/poems`, { headers }),
+        fetch(`${API}/poems/featured`, { headers }),
+        fetch(`${API}/stories/pending`, { headers }),
+        fetch(`${API}/stories`, { headers }),
+        fetch(`${API}/stories/featured`, { headers }),
       ]);
 
       const approvedPoemsData = await ap.json();
@@ -49,7 +49,7 @@ export default function AdminPage() {
   }, []);
 
   const approve = async (type, id) => {
-    await fetch(`${API}/api/${type}/approve/${id}`, {
+    await fetch(`${API}/${type}/approve/${id}`, {
       method: "PUT",
       headers,
     });
@@ -57,7 +57,7 @@ export default function AdminPage() {
   };
 
   const toggleFeature = async (type, id, featured) => {
-    await fetch(`${API}/api/${type}/feature/${id}`, {
+    await fetch(`${API}/${type}/feature/${id}`, {
       method: "PUT",
       headers: { ...headers, "Content-Type": "application/json" },
       body: JSON.stringify({ featured }),
@@ -66,7 +66,7 @@ export default function AdminPage() {
   };
 
   const remove = async (type, id) => {
-    await fetch(`${API}/api/${type}/${id}`, {
+    await fetch(`${API}/${type}/${id}`, {
       method: "DELETE",
       headers,
     });
