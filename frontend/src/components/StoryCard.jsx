@@ -12,7 +12,17 @@ export default function StoryCard({ story }) {
       whileHover={{ scale: 1.02 }}
       className="card p-5 hover:shadow-xl"
     >
-      <h3 className="text-lg font-semibold">{story.title}</h3>
+      <div className="flex items-center justify-between">
+        <h3 className="text-lg font-semibold">{story.title}</h3>
+        <span className="text-xs px-2 py-1 rounded-full bg-turquoise-100 text-turquoise-800">
+          {story.mood || "Moodless"}
+        </span>
+      </div>
+
+      {/* Author below title */}
+      <p className="text-sm text-gray-500 mt-1">
+        — {story.author?.username || story.author || "Anonymous"}
+      </p>
 
       <motion.p
         className={`mt-3 text-slate-700 leading-relaxed whitespace-pre-line
