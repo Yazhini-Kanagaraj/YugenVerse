@@ -16,10 +16,12 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors({
-  origin: "http://localhost:5173", // frontend URL
+[app.use(cors({
+  origin: ["http://localhost:5173", 
+    "https://Yugenverse-1.onrender.com" 
+  ],// frontend URL
   credentials: true,
-}));
+}))]
 app.use(express.json()); // parse JSON bodies
 
 // API Routes
