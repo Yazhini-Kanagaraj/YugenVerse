@@ -13,7 +13,10 @@ export default function StoryCard({ story }) {
       className="card p-5 hover:shadow-xl"
     >
       <h3 className="text-lg font-semibold">{story.title}</h3>
-
+      {/* Author */}
+      <p className="text-sm italic text-gray-500 mt-1">
+        — {story.anonymous ? "Anonymous" : story.author}
+      </p>
       <motion.p
         className={`mt-3 text-slate-700 leading-relaxed whitespace-pre-line
         ${!expanded ? "line-clamp-2" : ""}`}
