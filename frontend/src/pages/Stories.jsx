@@ -24,7 +24,7 @@ export default function Stories() {
   const [showModal, setShowModal] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const location = useLocation();
-
+  const API = import.meta.env.VITE_API_URL;
 
   const { user } = useContext(AuthContext);
 
@@ -34,8 +34,8 @@ export default function Stories() {
       try {
         const url =
           activeCategory === "All"
-            ? "http://localhost:5000/api/stories"
-            : `http://localhost:5000/api/stories/mood/${activeCategory}`;
+            ? `${API}/api/stories`
+            : `${API}/api/stories/mood/${activeCategory}`;
         const res = await fetch(url);
         if (!res.ok) throw new Error("Failed to fetch stories");
         const data = await res.json();

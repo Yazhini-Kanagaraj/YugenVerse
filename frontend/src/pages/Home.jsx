@@ -6,7 +6,7 @@ import SubmitWritingModal from "../components/SubmitWritingModal";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import FeaturedSlider from "../components/FeatureSlider";
-
+const API = import.meta.env.VITE_API_URL;
 export default function Home() {
   const [poems, setPoems] = useState([]);
   const [stories, setStories] = useState([]);
@@ -18,12 +18,12 @@ export default function Home() {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
 useEffect(() => {
-  fetch("http://localhost:5000/api/poems/featured")
+  fetch(`${API}/api/poems/featured`)
     .then(res => res.json())
     .then(data => setPoems(data))
     .catch(err => console.error("Poems fetch error:", err));
 
-  fetch("http://localhost:5000/api/stories/featured")
+  fetch(`${API}/api/stories/featured`)
     .then(res => res.json())
     .then(data => setStories(data))
     .catch(err => console.error("Stories fetch error:", err));

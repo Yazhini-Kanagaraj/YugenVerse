@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-
+const API = import.meta.env.VITE_API_URL;
 export default function About() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("");
@@ -14,7 +14,7 @@ export default function About() {
     setStatus("Sending...");
 
     try {
-      const res = await fetch("http://localhost:5000/api/contact", {
+      const res = await fetch(`${API}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

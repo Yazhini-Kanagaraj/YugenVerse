@@ -4,7 +4,7 @@ import SubmitWritingModal from "../components/SubmitWritingModal.jsx";
 import { AuthContext } from "../context/AuthContext";
 import { useLocation } from "react-router-dom";
 import LoginModal from "../components/LoginModal";
-
+const API = import.meta.env.VITE_API_URL;
 const categories = [
   "All",
   "Dream",
@@ -36,8 +36,8 @@ export default function Poetry() {
       try {
         const url =
           activeCategory === "All"
-            ? "http://localhost:5000/api/poems"
-            : `http://localhost:5000/api/poems/category/${activeCategory}`;
+            ? `${API}/api/poems`
+            : `${API}/api/poems/category/${activeCategory}`;
         const res = await fetch(url);
         if (!res.ok) throw new Error("Failed to fetch poems");
         const data = await res.json();
