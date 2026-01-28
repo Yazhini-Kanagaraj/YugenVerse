@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Example global custom styles */
+.btn {
+  @apply px-5 py-2 rounded-xl font-semibold transition transform active:scale-95;
+}
+
+.btn-primary {
+  @apply bg-teal-600 text-white hover:bg-teal-700 shadow-md;
+}
+
+.card {
+  @apply bg-white rounded-2xl shadow-md border border-slate-200 
+         hover:-translate-y-1 hover:shadow-lg transition;
+}
+.auth-bg {
+  background: linear-gradient(135deg, #1abc9c 0%, #2c3e50 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-bg::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 60%);
+  animation: wave 8s infinite ease-in-out;
+}
+
+@keyframes wave {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(20px, 20px) rotate(10deg); }
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  width: 90%;
+  max-width: 380px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.auth-title {
+  font-size: 1.7rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+}
+
+.auth-input::placeholder {
+  color: #eee;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border-radius: 10px;
+  background: #fff;
+  color: #2c3e50;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-btn:hover {
+  background: #e0e0e0;
+}
+
+.auth-msg {
+  margin-top: 10px;
+  color: #fff7cd;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
