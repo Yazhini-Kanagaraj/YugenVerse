@@ -18,7 +18,7 @@ connectDB();
 // Middleware
 [app.use(cors({
   origin: ["http://localhost:5173", 
-    "https://Yugenverse-1.onrender.com" 
+    "https://yugenverse-1.onrender.com" 
   ],// frontend URL
   credentials: true,
 }))]
